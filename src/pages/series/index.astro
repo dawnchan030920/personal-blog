@@ -1,0 +1,19 @@
+---
+import RootLayout from "../../layouts/RootLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const series = await getCollection("series");
+---
+
+<RootLayout>
+	<ul>
+		{series.map(series => (
+			<li>
+				<a href={`/series/${series.slug}`}>
+					{series.data.title}
+				</a>
+			</li>
+		))}
+	</ul>
+</RootLayout>

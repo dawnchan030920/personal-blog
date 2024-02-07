@@ -1,0 +1,19 @@
+---
+import RootLayout from "../../layouts/RootLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const tags = await getCollection("tags");
+---
+
+<RootLayout>
+	<ul>
+		{tags.map(tag => (
+			<li>
+				<a href={`/tags/${tag.slug}`}>
+					{tag.data.name}
+				</a>
+			</li>
+		))}
+	</ul>
+</RootLayout>
