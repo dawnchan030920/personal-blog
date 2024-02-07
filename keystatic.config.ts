@@ -1,6 +1,6 @@
 import { config, fields, collection } from '@keystatic/core';
 
-const prod = !(process.env.ENV === "dev");
+const prod = import.meta.env.PROD;
 
 export default config({
   storage: prod ? {
