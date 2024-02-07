@@ -1,12 +1,16 @@
 import { config, fields, collection } from '@keystatic/core';
 
+const prod = !(process.env.ENV === "dev");
+
 export default config({
-  storage: {
+  storage: prod ? {
     kind: "cloud",
+  } : {
+    kind: "local"
   },
-  cloud: {
+  cloud: prod ? {
     project: 'dc392/personal-blog',
-  },
+  } : undefined,
   collections: {
     tags: collection({
       label: "Tags",
