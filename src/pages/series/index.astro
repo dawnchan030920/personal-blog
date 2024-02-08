@@ -7,13 +7,13 @@ const series = await getCollection("series");
 ---
 
 <RootLayout>
-	<ul>
-		{series.map(series => (
-			<li>
-				<a href={`/series/${series.slug}`}>
-					{series.data.title}
-				</a>
-			</li>
-		))}
-	</ul>
+  <ul>
+    {
+      series.map((series) => (
+        <li>
+          <a href={`/series/${series.slug}`}>{series.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </RootLayout>

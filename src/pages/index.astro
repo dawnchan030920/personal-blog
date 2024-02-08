@@ -1,19 +1,14 @@
 ---
-import RootLayout from "../layouts/RootLayout.astro"
+import RootLayout from "../layouts/RootLayout.astro";
 
-import { getCollection } from "astro:content"
+import { getCollection, getEntries, getEntry } from "astro:content";
 
-const posts = await getCollection("posts");
+const [homepage] = await getCollection("homepage");
+const sections = await getEntries(homepage.data.sections);
 ---
 
 <RootLayout>
-	<ul>
-		{posts.map(post => (
-			<li>
-				<a href={`/posts/${post.slug}`}>
-					{post.data.title}
-				</a>
-			</li>
-		))}
-	</ul>
+  <ul>
+    {sections.map((section) => <li />)}
+  </ul>
 </RootLayout>
