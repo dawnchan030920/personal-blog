@@ -1,5 +1,6 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro";
+import HomepageSection from "../components/homepage/HomepageSection.astro";
 
 import { getCollection, getEntries, getEntry } from "astro:content";
 
@@ -9,6 +10,12 @@ const sections = await getEntries(homepage.data.sections);
 
 <RootLayout>
   <ul>
-    {sections.map((section) => <li />)}
+    {
+      sections.map((section) => (
+        <li>
+          <HomepageSection section={section} />
+        </li>
+      ))
+    }
   </ul>
 </RootLayout>
