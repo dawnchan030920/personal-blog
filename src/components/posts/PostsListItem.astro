@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import { getEntries, type CollectionEntry } from "astro:content";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+const tags = await getEntries(post.data.tags);
+
+const haveTags = tags.length > 0;
+---
+
+<section>
+  <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+  <Image src={post.data.cover} alt={post.data.coverAlt} />
+  <time>{post.data.publishDate}</time>
+  {
+    haveTags && (
+      <ul>
+        {tags.map((tag) => (
+          <li>{tag.data.name}</li>
+        ))}
+      </ul>
+    )
+  }
+</section>
