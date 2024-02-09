@@ -93,6 +93,14 @@ export default config({
           links: true,
           images: true,
         }),
+        cover: fields.image({
+          label: "Cover",
+          directory: "src/content/posts/covers",
+          publicPath: "./covers",
+        }),
+        coverAlt: fields.text({
+          label: "Cover Alt"
+        }),
         publishDate: fields.date({
           label: "Publish Date",
         }),
