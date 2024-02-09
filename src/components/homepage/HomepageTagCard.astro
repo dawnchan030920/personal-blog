@@ -1,0 +1,18 @@
+---
+import { type CollectionEntry } from "astro:content";
+import HomepageItemCardContainer from "./HomepageItemCardContainer.astro";
+
+type Props = {
+  tag: CollectionEntry<"tags">;
+};
+
+const { tag } = Astro.props;
+
+const titleData = {
+  text: tag.data.name,
+  link: `/tags/${tag.slug}`,
+};
+---
+
+<HomepageItemCardContainer title={titleData}>
+</HomepageItemCardContainer>

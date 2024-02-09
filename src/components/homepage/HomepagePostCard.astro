@@ -1,0 +1,19 @@
+---
+import { type CollectionEntry } from "astro:content";
+import HomepageItemCardContainer from "./HomepageItemCardContainer.astro";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+
+const titleData = {
+  text: post.data.title,
+  link: `/posts/${post.slug}`,
+};
+---
+
+<HomepageItemCardContainer title={titleData}>
+  <time>{post.data.publishDate}</time>
+</HomepageItemCardContainer>
