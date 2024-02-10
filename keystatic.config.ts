@@ -46,6 +46,15 @@ export default config({
           formatting: true,
           links: true,
         }),
+        icon: fields.image({
+          label: "Icon",
+          directory: "src/content/tags/icons",
+          publicPath: "./icons",
+          
+        }),
+        iconAlt: fields.text({
+          label: "Icon Alt",
+        }),
       },
     }),
     series: collection({
@@ -99,7 +108,7 @@ export default config({
           publicPath: "./covers",
         }),
         coverAlt: fields.text({
-          label: "Cover Alt"
+          label: "Cover Alt",
         }),
         publishDate: fields.date({
           label: "Publish Date",

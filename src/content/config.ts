@@ -2,13 +2,14 @@ import { z, defineCollection, reference } from "astro:content";
 
 const postsCollection = defineCollection({
   type: "content",
-  schema: ({ image }) => z.object({
-    title: z.string(),
-    publishDate: z.coerce.date(),
-    tags: z.array(reference("tags")),
-    cover: image(),
-    coverAlt: z.string()
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      publishDate: z.coerce.date(),
+      tags: z.array(reference("tags")),
+      cover: image(),
+      coverAlt: z.string(),
+    }),
 });
 
 const tagsCollection = defineCollection({
@@ -20,15 +21,18 @@ const tagsCollection = defineCollection({
 
 const seriesCollection = defineCollection({
   type: "content",
-  schema: z.object({
-    title: z.string(),
-    posts: z.array(
-      z.object({
-        subtitle: z.string(),
-        post: reference("posts"),
-      }),
-    ),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      posts: z.array(
+        z.object({
+          subtitle: z.string(),
+          post: reference("posts"),
+        }),
+      ),
+      icon: image(),
+      iconAlt: z.string(),
+    }),
 });
 
 const homepageSectionsCollection = defineCollection({
