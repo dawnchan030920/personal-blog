@@ -14,9 +14,12 @@ const postsCollection = defineCollection({
 
 const tagsCollection = defineCollection({
   type: "content",
-  schema: z.object({
-    name: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      icon: image(),
+      iconAlt: z.string(),
+    }),
 });
 
 const seriesCollection = defineCollection({
@@ -30,8 +33,8 @@ const seriesCollection = defineCollection({
           post: reference("posts"),
         }),
       ),
-      icon: image(),
-      iconAlt: z.string(),
+      cover: image(),
+      coverAlt: z.string(),
     }),
 });
 

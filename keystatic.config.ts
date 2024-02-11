@@ -69,6 +69,14 @@ export default config({
           formatting: true,
           links: true,
         }),
+        cover: fields.image({
+          label: "Cover",
+          directory: "src/content/series/covers",
+          publicPath: "./covers",
+        }),
+        coverAlt: fields.text({
+          label: "Cover Alt",
+        }),
         posts: fields.array(
           fields.object({
             subtitle: fields.text({
