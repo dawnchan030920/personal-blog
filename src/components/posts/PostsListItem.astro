@@ -14,7 +14,7 @@ const haveTags = tags.length > 0;
 
 <section>
   <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-  <Image src={post.data.cover} alt={post.data.coverAlt} />
+  {post.data.cover && <Image src={post.data.cover} alt={post.data.coverAlt ?? ""} />}
   <time>{post.data.publishDate}</time>
   {
     haveTags && (

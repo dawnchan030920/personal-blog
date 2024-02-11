@@ -50,7 +50,9 @@ export default config({
           label: "Icon",
           directory: "src/content/tags/icons",
           publicPath: "./icons",
-          
+          validation: {
+            isRequired: false,
+          },
         }),
         iconAlt: fields.text({
           label: "Icon Alt",
@@ -73,6 +75,9 @@ export default config({
           label: "Cover",
           directory: "src/content/series/covers",
           publicPath: "./covers",
+          validation: {
+            isRequired: false,
+          },
         }),
         coverAlt: fields.text({
           label: "Cover Alt",
@@ -114,6 +119,9 @@ export default config({
           label: "Cover",
           directory: "src/content/posts/covers",
           publicPath: "./covers",
+          validation: {
+            isRequired: false,
+          },
         }),
         coverAlt: fields.text({
           label: "Cover Alt",

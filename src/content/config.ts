@@ -7,8 +7,8 @@ const postsCollection = defineCollection({
       title: z.string(),
       publishDate: z.coerce.date(),
       tags: z.array(reference("tags")),
-      cover: image(),
-      coverAlt: z.string(),
+      cover: image().optional(),
+      coverAlt: z.string().optional(),
     }),
 });
 
@@ -17,8 +17,8 @@ const tagsCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      icon: image(),
-      iconAlt: z.string(),
+      icon: image().optional(),
+      iconAlt: z.string().optional(),
     }),
 });
 
@@ -33,8 +33,8 @@ const seriesCollection = defineCollection({
           post: reference("posts"),
         }),
       ),
-      cover: image(),
-      coverAlt: z.string(),
+      cover: image().optional(),
+      coverAlt: z.string().optional(),
     }),
 });
 
@@ -60,7 +60,7 @@ const homepageSectionsCollection = defineCollection({
   }),
 });
 
-const homepage = defineCollection({
+const homepageSingleton = defineCollection({
   type: "data",
   schema: z.object({
     sections: z.array(reference("homepageSections")),
@@ -73,5 +73,5 @@ export const collections = {
   series: seriesCollection,
   homepageSections: homepageSectionsCollection,
 
-  homepage,
+  homepage: homepageSingleton,
 };
