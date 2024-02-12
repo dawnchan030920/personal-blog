@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry } from "astro:content";
 import HomepageItemCardContainer from "./HomepageItemCardContainer.astro";
+import FormattedDate from "../../components/utils/FormattedDate.astro";
 
 type Props = {
   post: CollectionEntry<"posts">;
@@ -15,5 +16,5 @@ const titleData = {
 ---
 
 <HomepageItemCardContainer title={titleData}>
-  <time>{post.data.publishDate}</time>
+  <FormattedDate date={post.data.publishDate} />
 </HomepageItemCardContainer>

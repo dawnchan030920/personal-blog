@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import { getEntries, type CollectionEntry } from "astro:content";
+
+type Props = {
+  tag: CollectionEntry<"tags">;
+};
+
+const { tag } = Astro.props;
+
+const { Content } = await tag.render();
+---
+
+<section>
+  <a href={`/tags/${tag.slug}`}>{tag.data.name}</a>
+  {tag.data.icon && <Image src={tag.data.icon} alt={tag.data.iconAlt ?? ""} />}
+  <Content />
+</section>

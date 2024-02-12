@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getEntries, type CollectionEntry } from "astro:content";
+import FormattedDate from "../utils/FormattedDate.astro";
 
 type Props = {
   post: CollectionEntry<"posts">;
@@ -14,8 +15,12 @@ const haveTags = tags.length > 0;
 
 <section>
   <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-  {post.data.cover && <Image src={post.data.cover} alt={post.data.coverAlt ?? ""} />}
-  <time>{post.data.publishDate}</time>
+  {
+    post.data.cover && (
+      <Image src={post.data.cover} alt={post.data.coverAlt ?? ""} />
+    )
+  }
+  <FormattedDate date={post.data.publishDate} />
   {
     haveTags && (
       <ul>
