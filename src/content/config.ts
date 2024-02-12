@@ -40,24 +40,27 @@ const seriesCollection = defineCollection({
 
 const homepageSectionsCollection = defineCollection({
   type: "content",
-  schema: z.object({
-    title: z.string(),
-    references: z.discriminatedUnion("discriminant", [
-      z.object({ discriminant: z.literal("none") }),
-      z.object({
-        discriminant: z.literal("posts"),
-        value: z.array(reference("posts")),
-      }),
-      z.object({
-        discriminant: z.literal("tags"),
-        value: z.array(reference("tags")),
-      }),
-      z.object({
-        discriminant: z.literal("series"),
-        value: z.array(reference("series")),
-      }),
-    ]),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      icon: image().optional(),
+      iconAlt: z.string().optional(),
+      references: z.discriminatedUnion("discriminant", [
+        z.object({ discriminant: z.literal("none") }),
+        z.object({
+          discriminant: z.literal("posts"),
+          value: z.array(reference("posts")),
+        }),
+        z.object({
+          discriminant: z.literal("tags"),
+          value: z.array(reference("tags")),
+        }),
+        z.object({
+          discriminant: z.literal("series"),
+          value: z.array(reference("series")),
+        }),
+      ]),
+    }),
 });
 
 const homepageSingleton = defineCollection({

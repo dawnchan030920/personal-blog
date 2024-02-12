@@ -153,6 +153,17 @@ export default config({
           formatting: true,
           links: true,
         }),
+        icon: fields.image({
+          label: "Icon",
+          directory: "src/content/homepageSections/icons",
+          publicPath: "./icons",
+          validation: {
+            isRequired: false,
+          },
+        }),
+        iconAlt: fields.text({
+          label: "Icon Alt",
+        }),
         references: fields.conditional(
           fields.select({
             label: "Reference Type",
