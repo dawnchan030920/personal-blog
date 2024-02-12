@@ -10,4 +10,5 @@ export default defineConfig({
   output: "hybrid",
   adapter: vercel(),
   integrations: [react(), markdoc(), keystatic()],
+  site: "https://personal-blog-sigma-dun.vercel.app/",
 });
