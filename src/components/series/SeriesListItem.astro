@@ -19,7 +19,7 @@ const { Content } = await series.render();
 ---
 
 <section>
-  <a href={`/series/${series.data}`}>{series.data.title}</a>
+  <a href={`/series/${series.slug}`}>{series.data.title}</a>
   {
     series.data.cover && (
       <Image src={series.data.cover} alt={series.data.coverAlt ?? ""} />

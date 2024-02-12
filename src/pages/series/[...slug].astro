@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import RootLayout from "../../layouts/RootLayout.astro";
 import { getCollection } from "astro:content";
+import SeriesDetail from "../../components/series/SeriesDetail.astro";
 
 export const getStaticPaths = (async () => {
   const series = await getCollection("series");
@@ -10,16 +11,14 @@ export const getStaticPaths = (async () => {
       slug: series.slug,
     },
     props: {
-      post: series,
+      series: series,
     },
   }));
 }) satisfies GetStaticPaths;
 
-const { post } = Astro.props;
-
-const { Content } = await post.render();
+const { series } = Astro.props;
 ---
 
 <RootLayout>
-  <Content />
+  <SeriesDetail series={series} />
 </RootLayout>

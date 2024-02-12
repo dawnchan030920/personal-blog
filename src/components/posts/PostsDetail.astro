@@ -1,0 +1,37 @@
+---
+import { getEntries, type CollectionEntry } from "astro:content";
+import FormattedDate from "../utils/FormattedDate.astro";
+import { Image } from "astro:assets";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+const tags = await getEntries(post.data.tags);
+const haveTags = tags.length > 0;
+
+const { Content } = await post.render();
+---
+
+<article>
+  {
+    post.data.cover && (
+      <Image src={post.data.cover} alt={post.data.coverAlt ?? ""} />
+    )
+  }
+  <h1>{post.data.title}</h1>
+  <FormattedDate date={post.data.publishDate} />
+  {
+    haveTags && (
+      <ul>
+        {tags.map((tag) => (
+          <li>
+            <a href={`/tags/${tag.slug}`}>{tag.data.name}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  <Content />
+</article>

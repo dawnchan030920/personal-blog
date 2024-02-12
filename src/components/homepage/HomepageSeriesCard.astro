@@ -10,10 +10,8 @@ const { series } = Astro.props;
 
 const titleData = {
   text: series.data.title,
-  link: `/series/${series.slug}`
-}
+  link: `/series/${series.slug}`,
+};
 ---
 
-<HomepageItemCardContainer title={titleData}>
-
-</HomepageItemCardContainer>
+<HomepageItemCardContainer title={titleData} />

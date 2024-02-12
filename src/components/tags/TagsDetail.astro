@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import { getEntries, type CollectionEntry, getCollection } from "astro:content";
+import TagPostsListItem from "./TagPostsListItem.astro";
+
+type Props = {
+  tag: CollectionEntry<"tags">;
+};
+
+const { tag } = Astro.props;
+
+const posts = (await getCollection("posts")).filter(async (post) =>
+  (await getEntries(post.data.tags)).map((tag) => tag.slug).includes(tag.slug),
+);
+
+const havePosts = posts.length > 0;
+
+const { Content } = await tag.render();
+---
+
+<article>
+  {tag.data.icon && <Image src={tag.data.icon} alt={tag.data.iconAlt ?? ""} />}
+  <h1>{tag.data.name}</h1>
+  <Content />
+  {
+    havePosts && (
+      <ul>
+        {posts.map((post) => (
+          <li>
+            <TagPostsListItem post={post} />
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</article>
