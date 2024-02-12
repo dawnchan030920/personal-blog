@@ -1,7 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import RootLayout from "../../layouts/RootLayout.astro";
 
 import { getCollection } from "astro:content";
+import { getEntries } from "astro:content";
+import PostsListItem from "../../components/posts/PostsListItem.astro";
 
 const posts = await getCollection("posts");
 ---
@@ -11,7 +14,7 @@ const posts = await getCollection("posts");
     {
       posts.map((post) => (
         <li>
-          <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+          <PostsListItem post={post} />
         </li>
       ))
     }

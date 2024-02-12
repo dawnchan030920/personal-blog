@@ -3,6 +3,7 @@ import { getEntries, type CollectionEntry } from "astro:content";
 import HomepagePostCard from "./HomepagePostCard.astro";
 import HomepageTagCard from "./HomepageTagCard.astro";
 import HomepageSeriesCard from "./HomepageSeriesCard.astro";
+import { Image } from "astro:assets";
 
 type Props = {
   section: CollectionEntry<"homepageSections">;
@@ -13,7 +14,7 @@ const { section } = Astro.props;
 const { Content } = await section.render();
 
 const {
-  data: { title, references },
+  data: { title, references, icon, iconAlt },
 } = section;
 
 let itemEntries = undefined;
@@ -24,7 +25,10 @@ if (references.discriminant != "none") {
 ---
 
 <section>
-  <header>{title}</header>
+  <header>
+    <div>{title}</div>
+    {icon && <Image src={icon} alt={iconAlt ?? ""} />}
+  </header>
   <Content />
   {
     itemEntries && (

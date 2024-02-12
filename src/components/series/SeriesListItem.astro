@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import { getEntries } from "astro:content";
+import { type CollectionEntry } from "astro:content";
+import FormattedDate from "../utils/FormattedDate.astro";
+
+type Props = {
+  series: CollectionEntry<"series">;
+};
+
+const { series } = Astro.props;
+
+const postsCount = series.data.posts.length;
+const lastUpdatedTime = (await getEntries(series.data.posts.map((p) => p.post)))
+  .map((post) => post.data.publishDate)
+  .reduce((prev, cur) => (prev > cur ? prev : cur));
+
+const { Content } = await series.render();
+---
+
+<section>
+  <a href={`/series/${series.slug}`}>{series.data.title}</a>
+  {
+    series.data.cover && (
+      <Image src={series.data.cover} alt={series.data.coverAlt ?? ""} />
+    )
+  }
+  <div>{postsCount}</div>
+  <FormattedDate date={lastUpdatedTime} />
+</section>

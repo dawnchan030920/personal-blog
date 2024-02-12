@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import RootLayout from "../../layouts/RootLayout.astro";
 import { getCollection } from "astro:content";
+import TagsDetail from "../../components/tags/TagsDetail.astro";
 
 export const getStaticPaths = (async () => {
   const tags = await getCollection("tags");
@@ -10,16 +11,16 @@ export const getStaticPaths = (async () => {
       slug: tag.slug,
     },
     props: {
-      post: tag,
+      tag: tag,
     },
   }));
 }) satisfies GetStaticPaths;
 
-const { post } = Astro.props;
+const { tag } = Astro.props;
 
-const { Content } = await post.render();
+const { Content } = await tag.render();
 ---
 
 <RootLayout>
-  <Content />
+  <TagsDetail tag={tag} />
 </RootLayout>

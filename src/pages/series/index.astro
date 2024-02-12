@@ -1,4 +1,5 @@
 ---
+import SeriesListItem from "../../components/series/SeriesListItem.astro";
 import RootLayout from "../../layouts/RootLayout.astro";
 
 import { getCollection } from "astro:content";
@@ -11,7 +12,7 @@ const series = await getCollection("series");
     {
       series.map((series) => (
         <li>
-          <a href={`/series/${series.slug}`}>{series.data.title}</a>
+          <SeriesListItem series={series} />
         </li>
       ))
     }

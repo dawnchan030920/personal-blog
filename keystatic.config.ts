@@ -46,6 +46,17 @@ export default config({
           formatting: true,
           links: true,
         }),
+        icon: fields.image({
+          label: "Icon",
+          directory: "src/content/tags/icons",
+          publicPath: "./icons",
+          validation: {
+            isRequired: false,
+          },
+        }),
+        iconAlt: fields.text({
+          label: "Icon Alt",
+        }),
       },
     }),
     series: collection({
@@ -59,6 +70,17 @@ export default config({
           label: "Description",
           formatting: true,
           links: true,
+        }),
+        cover: fields.image({
+          label: "Cover",
+          directory: "src/content/series/covers",
+          publicPath: "./covers",
+          validation: {
+            isRequired: false,
+          },
+        }),
+        coverAlt: fields.text({
+          label: "Cover Alt",
         }),
         posts: fields.array(
           fields.object({
@@ -93,6 +115,17 @@ export default config({
           links: true,
           images: true,
         }),
+        cover: fields.image({
+          label: "Cover",
+          directory: "src/content/posts/covers",
+          publicPath: "./covers",
+          validation: {
+            isRequired: false,
+          },
+        }),
+        coverAlt: fields.text({
+          label: "Cover Alt",
+        }),
         publishDate: fields.date({
           label: "Publish Date",
         }),
@@ -119,6 +152,17 @@ export default config({
           label: "Description",
           formatting: true,
           links: true,
+        }),
+        icon: fields.image({
+          label: "Icon",
+          directory: "src/content/homepageSections/icons",
+          publicPath: "./icons",
+          validation: {
+            isRequired: false,
+          },
+        }),
+        iconAlt: fields.text({
+          label: "Icon Alt",
         }),
         references: fields.conditional(
           fields.select({
