@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import RootLayout from "../../layouts/RootLayout.astro";
+
+import { getCollection } from "astro:content";
+import { getEntries } from "astro:content";
+import PostsListItem from "../../components/posts/PostsListItem.astro";
+
+const posts = await getCollection("posts");
+---
+
+<RootLayout>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <PostsListItem post={post} />
+        </li>
+      ))
+    }
+  </ul>
+</RootLayout>

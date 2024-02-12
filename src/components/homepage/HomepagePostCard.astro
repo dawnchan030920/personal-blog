@@ -1,0 +1,20 @@
+---
+import { type CollectionEntry } from "astro:content";
+import FormattedDate from "../../components/utils/FormattedDate.astro";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+
+const titleData = {
+  text: post.data.title,
+  link: `/posts/${post.slug}`,
+};
+---
+
+<section>
+  <a href={titleData.link}>{titleData.text}</a>
+  <FormattedDate date={post.data.publishDate} />
+</section>

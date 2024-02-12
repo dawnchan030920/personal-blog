@@ -1,0 +1,27 @@
+---
+import { type CollectionEntry } from "astro:content";
+import FormattedDate from "../utils/FormattedDate.astro";
+import { Image } from "astro:assets";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+  index: number;
+};
+
+const { post, index } = Astro.props;
+---
+
+<section>
+  <div>{index}</div>
+  {
+    post.data.cover && (
+      <Image src={post.data.cover} alt={post.data.coverAlt ?? ""} />
+    )
+  }
+  <FormattedDate date={post.data.publishDate} />
+  <a href={`/posts/${post.slug}`}>
+    <h1>
+      {post.data.title}
+    </h1>
+  </a>
+</section>

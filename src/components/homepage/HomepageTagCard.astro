@@ -1,0 +1,18 @@
+---
+import { type CollectionEntry } from "astro:content";
+
+type Props = {
+  tag: CollectionEntry<"tags">;
+};
+
+const { tag } = Astro.props;
+
+const titleData = {
+  text: tag.data.name,
+  link: `/tags/${tag.slug}`,
+};
+---
+
+<section>
+  <a href={titleData.link}>{titleData.text}</a>
+</section>

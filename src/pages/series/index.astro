@@ -1,0 +1,20 @@
+---
+import SeriesListItem from "../../components/series/SeriesListItem.astro";
+import RootLayout from "../../layouts/RootLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const series = await getCollection("series");
+---
+
+<RootLayout>
+  <ul>
+    {
+      series.map((series) => (
+        <li>
+          <SeriesListItem series={series} />
+        </li>
+      ))
+    }
+  </ul>
+</RootLayout>

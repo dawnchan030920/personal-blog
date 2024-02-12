@@ -1,0 +1,20 @@
+---
+import TagsListItem from "../../components/tags/TagsListItem.astro";
+import RootLayout from "../../layouts/RootLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const tags = await getCollection("tags");
+---
+
+<RootLayout>
+  <ul>
+    {
+      tags.map((tag) => (
+        <li>
+          <TagsListItem tag={tag} />
+        </li>
+      ))
+    }
+  </ul>
+</RootLayout>

@@ -1,0 +1,52 @@
+---
+import { getEntries, type CollectionEntry } from "astro:content";
+import HomepagePostCard from "./HomepagePostCard.astro";
+import HomepageTagCard from "./HomepageTagCard.astro";
+import HomepageSeriesCard from "./HomepageSeriesCard.astro";
+import { Image } from "astro:assets";
+
+type Props = {
+  section: CollectionEntry<"homepageSections">;
+};
+
+const { section } = Astro.props;
+
+const { Content } = await section.render();
+
+const {
+  data: { title, references, icon, iconAlt },
+} = section;
+
+let itemEntries = undefined;
+
+if (references.discriminant != "none") {
+  itemEntries = await getEntries(references.value);
+}
+---
+
+<section>
+  <header>
+    <div>{title}</div>
+    {icon && <Image src={icon} alt={iconAlt ?? ""} />}
+  </header>
+  <Content />
+  {
+    itemEntries && (
+      <ul>
+        {itemEntries.map((item) => (
+          <li>
+            {item.collection == "posts" ? (
+              <HomepagePostCard post={item} />
+            ) : item.collection == "tags" ? (
+              <HomepageTagCard tag={item} />
+            ) : item.collection == "series" ? (
+              <HomepageSeriesCard series={item} />
+            ) : (
+              <div>Unrecognized Item Type</div>
+            )}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</section>
