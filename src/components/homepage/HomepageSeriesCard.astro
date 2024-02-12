@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry } from "astro:content";
-import HomepageItemCardContainer from "./HomepageItemCardContainer.astro";
 
 type Props = {
   series: CollectionEntry<"series">;
@@ -14,4 +13,6 @@ const titleData = {
 };
 ---
 
-<HomepageItemCardContainer title={titleData} />
+<section>
+  <a href={titleData.link}>{titleData.text}</a>
+</section>
