@@ -1,0 +1,55 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Dawn Chan'
+theme = 'typo'
+
+[taxanomies]
+tag = 'tags'
+
+[params]
+description = 'Blog of Dawn Chan'
+
+theme = 'auto'
+
+homeIntroTitle = 'Welcome to my blog!'
+homeIntroContent = """
+  I am a Chinese college student in Wuhan Univ.
+  Intereted in topics of a wide range including FP, PLT, Architecture, UI/UX and a lot more.
+  Know something about C#, Haskell, Rust and frameworks related.
+"""
+
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+paginationSize = 10
+listSummaries = true
+
+breadcrumbs = true
+
+# Social links
+
+[[params.social]]
+name = "github"
+url = "https://github.com/dawnchan030920"
+
+# Menus
+
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
+[[params.menu]]
+name = "projects"
+url = "/projects"
+
+[[params.menu]]
+name = "about"
+url = "/about"
+
+[markup]
+[markup.highlight]
+style = "onedark"
