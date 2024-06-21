@@ -5,7 +5,7 @@ toc = true
 tags = ["web components", "architecture"]
 showTags = true
 readTime = true
-draft = true
+draft = false
 +++
 
 ## Problem
