@@ -15,7 +15,7 @@ homeIntroTitle = 'Welcome to my blog!'
 homeIntroContent = """
   I am a Chinese college student in Wuhan Univ.
   Intereted in topics of a wide range including FP, PLT, Architecture, UI/UX and a lot more.
-  Know something about C#, Haskell, Rust and frameworks related.
+  Know something about C#, TypeScript, Haskell, Rust and frameworks related.
 """
 
 homeCollectionTitle = 'Posts'
