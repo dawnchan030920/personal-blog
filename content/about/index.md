@@ -11,7 +11,9 @@ Hi, I'm Dawn Chan!
 * Interested in FP, PLT, Architecture, UI/UX and a lot more.
 * Know something about C#, TypeScript, Haskell, Rust and related frameworks.
 
-![](https://komarev.com/ghpvc/?username=dawnchan030920)
+![Profile Views](https://komarev.com/ghpvc/?username=dawnchan030920)
+
+[![Contribution](https://ghchart.rshah.org/dawnchan030920)](https://github.com/dawnchan030920)
 
 [![Dawn Chan's GitHub stats](https://github-readme-stats.vercel.app/api?username=dawnchan030920&show_icons=true)](https://github.com/dawnchan030920)
 
