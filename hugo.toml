@@ -57,3 +57,12 @@ url = "/about"
 [markup]
 [markup.highlight]
 style = "onedark"
+
+[params.giscus]
+enable = true
+repo = "dawnchan030920/blog-comment"
+repoId = "R_kgDOMMrO_g"
+category = "Announcements"
+categoryId = "DIC_kwDOMMrO_s4CgR7i"
+mapping = "pathname"
+theme = "preferred_color_scheme"
