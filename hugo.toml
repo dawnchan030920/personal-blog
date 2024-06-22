@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://personal-blog-fzfb.onrender.com'
 languageCode = 'en-us'
 title = 'Dawn Chan'
 theme = 'typo'
@@ -31,6 +31,10 @@ breadcrumbs = true
 [[params.social]]
 name = "github"
 url = "https://github.com/dawnchan030920"
+
+[[params.social]]
+name = "rss"
+url = "/index.xml"
 
 # Menus
 
@@ -66,3 +70,6 @@ category = "Announcements"
 categoryId = "DIC_kwDOMMrO_s4CgR7i"
 mapping = "pathname"
 theme = "preferred_color_scheme"
+
+[outputs]
+home = ["HTML", "RSS"]
