@@ -1,5 +1,5 @@
 +++
-title = 'Place of Web Components'
+title = 'Position of Web Components'
 date = 2024-06-20T15:43:05Z
 toc = true
 tags = ["web components", "architecture"]
@@ -85,7 +85,7 @@ Make your own choice on how to manage state and there're no constraints. You can
 
 ## Conclusion
 
-The best place for web components in architecture is based on the specific use case and there're no silver bullets.
+The best position for web components in architecture is based on the specific use case and there're no silver bullets.
 
 However, the extracting of business logic and hence *state* makes web components more reusable and more *native-like*, therefore lays the foundation for different usages. But it should also be noticed that the recognition and indentifying of business logic and state are based on the use case.
 
