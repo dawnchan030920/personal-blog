@@ -1,6 +1,11 @@
 +++
 title = 'Nix Should Focus on the Static'
 date = 2025-02-12T12:33:25+08:00
+toc = true
+math = true
+tags = ["functional programming", "nix"]
+showTags = true
+readTime = true
 draft = false
 +++
 
