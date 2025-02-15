@@ -36,6 +36,13 @@ url = "https://github.com/dawnchan030920"
 name = "rss"
 url = "/index.xml"
 
+# Friend links
+[[params.friends]]
+name="xiwen"
+avatar="https://xiwen1.github.io/img/icon.jpg"
+url="https://xiwen1.github.io/"
+description="并非博客"
+
 # Menus
 
 [[params.menu]]
