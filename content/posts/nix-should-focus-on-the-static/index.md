@@ -6,7 +6,7 @@ draft = false
 
 ## Cause
 
-My Firefox on NixOS met a problem: everytime the home environment is rebuilt, the `~/.mozilla` folder must be removed for home-manager to set up configs. Therefore, all stored information, including those that cannot be generated from `Nix` like history, passwords, etc are lost.
+My Firefox on NixOS met a problem: everytime the home environment is rebuilt, the `~/.mozilla` folder must be removed for home-manager to set up configs. Therefore, all stored information, including those that cannot be generated from `Nix` like history, passwords, etc. are lost.
 
 Blaming `Nix` for overriding those information is almost the sudden reaction. However, home-manager is just doing its job: reproduce the **same** thing. The problem is that we're requiring something that should **not** be considered part of reproducibility - which is exactly the opposite.
 
