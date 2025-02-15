@@ -1,0 +1,13 @@
+<ul style="list-style-type: none; padding: 0; margin: 0; display: flex; flex-direction: row; gap: 1em; flex-wrap: wrap;">
+{{ range .Site.Params.friends }}
+    <li style="padding: 0; margin: 0;">
+        <div style="display: flex; align-items: center;">
+            <img src="{{ .avatar }}" style="width: 3em; height: 3em;" />
+            <div style="padding-left: 1em;">
+                <a href="{{ .url }}" target="_blank">{{ .name }}</a>
+                <div>{{ .description }}</div>
+            </div>
+        </div>
+    </li>
+{{ end }}
+</ul>

@@ -58,6 +58,10 @@ url = "/projects"
 name = "about"
 url = "/about"
 
+[[params.menu]]
+name = "friends"
+url = "/friends"
+
 [markup]
 [markup.highlight]
 style = "onedark"
@@ -73,3 +77,6 @@ theme = "preferred_color_scheme"
 
 [outputs]
 home = ["HTML", "RSS"]
+
+[security]
+enableInlineShortcodes = true
