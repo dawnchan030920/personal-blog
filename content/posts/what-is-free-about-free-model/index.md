@@ -59,7 +59,7 @@ It is told and verified that $F_T(X)$ is the free model of the theory.
 
 Intuitively it means that, **the syntactic meaning for free is the syntax itself plus equations**, since trees can be regarded as a faithful construction of syntax, and $F_T(X)$ is the quotient of it divided by equations.
 
-The interesting part is that we don't need an independent $|I|$, which is almost a trivial statement since it is being *constructed* now. Since $I$ can be built of $X$ now,
+The interesting part is that we don't need an independent $|I|$, which is almost a trivial statement since it is being *constructed* as $F_T(X)$ now. Since $I$ can be built of $X$ now,
 
 1. Evaluation is done directly on **syntax**, more specifically **from and to** syntax,
 2. One don't have to distinguish $X$ and $I$ which means $X$ is now conceptually **any set** rather than indexes over values. $x\in X$ can be a value.
