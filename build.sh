@@ -38,4 +38,4 @@ hugo version
 cd "$ORIGINAL_DIR"
 
 # Now you can add your Hugo build commands here
-hugo --logLevel info
+hugo --gc --minify
