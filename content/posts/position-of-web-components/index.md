@@ -6,6 +6,8 @@ tags = ["web components", "architecture"]
 showTags = true
 readTime = true
 draft = false
+summary = "Web components should be the foundation, not the framework."
+description = "Web components should be the foundation, not the framework."
 +++
 
 ## Problem

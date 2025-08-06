@@ -24,7 +24,11 @@ homeCollection = 'posts'
 paginationSize = 10
 listSummaries = true
 
-breadcrumbs = true
+# Breadcrumbs
+[params.breadcrumbs]
+enabled = true
+showCurrentPage = true
+home = "~"
 
 # Social links
 

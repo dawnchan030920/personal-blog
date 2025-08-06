@@ -7,6 +7,8 @@ tags = ["functional programming", "haskell"]
 showTags = true
 readTime = true
 draft = false
+summary = "Recursion is something that uses itself to define itself."
+description = "Recursion is something that uses itself to define itself."
 +++
 
 ## Introduction

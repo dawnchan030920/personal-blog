@@ -7,6 +7,8 @@ math = true
 tags = ["free model"]
 showTags = true
 readTime = true
+summary = "Syntax itself is the free model for signature."
+description = "Syntax itself is the free model for signature."
 +++
 
 ## Background

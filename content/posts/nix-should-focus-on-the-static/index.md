@@ -7,6 +7,8 @@ tags = ["functional programming", "nix"]
 showTags = true
 readTime = true
 draft = false
+summary = "Nix is good at describing something as static."
+description = "Nix is good at describing something as static."
 +++
 
 ## Cause
