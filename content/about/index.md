@@ -8,7 +8,7 @@ Hi, I'm Dawn Chan!
 
 * College student in Wuhan University.
 * Enjoy exploring theoretical stuff when encountering problems and trying to figure out reusable solutions for them.
-* Interested in PLT, FP, Architecture, UI/UX and a lot more.
+* Interested in PLT especially type related topics like type systems and type theory, FP, Architecture, UI/UX and a lot more.
 * Currently exploring different type systems and their corresponding experimental languages.
 * Know something about C#, TypeScript, Haskell, Rust and related frameworks.
 
