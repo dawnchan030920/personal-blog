@@ -14,7 +14,7 @@ theme = 'auto'
 homeIntroTitle = 'Welcome to my blog!'
 homeIntroContent = """
   I am a Chinese college student in Wuhan Univ.
-  Intereted in topics of a wide range including FP, PLT, Architecture, UI/UX and a lot more.
+  Intereted in topics of a wide range including PLT especially type system and type theory, FP, Architecture, UI/UX and a lot more.
   Know something about C#, TypeScript, Haskell, Rust and frameworks related.
 """
 
