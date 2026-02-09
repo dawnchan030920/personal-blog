@@ -2,7 +2,7 @@
   description = "Personal blog developing flake";
 
   # Flake inputs
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
   # Flake outputs
   outputs = { self, nixpkgs }:
