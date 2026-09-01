@@ -1,12 +1,12 @@
 +++
 title = 'About'
-date = 2024-06-20T15:44:02Z
+date = 2026-09-01T03:19:10Z
 draft = false
 +++
 
 Hi, I'm Dawn Chan!
 
-* College student in Wuhan University.
+* Graduate student at Wuhan University.
 * Enjoy exploring theoretical stuff when encountering problems and trying to figure out reusable solutions for them.
 * Interested in PLT especially type related topics like type systems and type theory, FP, Architecture, UI/UX and a lot more.
 * Currently exploring different type systems and their corresponding experimental languages.
